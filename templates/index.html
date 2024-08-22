@@ -107,9 +107,9 @@
 <body>
 
 <div class = "center">
-<div class='text' align='center'><h2><font color='#00b4d8'>Movie</font><font color='#fb6f92'>Pulse</font>: Upload your own dataset and use a model trained on it! &nbsp;</h2></div>
+<div class='text' align='center'><h2>Finetune a model- Upload your own dataset and use a model trained on it! &nbsp;</h2></div>
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+  <button class="tablinks" onclick="openCity(event, 'London')">Label Classification</button>
   <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
   <!--button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button-->
 </div>
@@ -122,7 +122,7 @@
 	<br>
 	Please upload your dataset as a .csv for text classification below and click submit.
   </p>
-  <form action="/" method="post" enctype="multipart/form-data"></form>
+  <form action="/" method="post" enctype="multipart/form-data">
   	<label for="input_data1" class='label success'>Data:</label>
   	<input type="file" name="input_data1" accept = ".csv">
 	<button type = "submit">Upload</button>  
