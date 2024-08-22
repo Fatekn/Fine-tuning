@@ -67,13 +67,12 @@ def make_prediction():
             return 'No selected file'
         if file:
             data1_name = file.filename
-            file.save('static/file1/' + file.filename)
+            file.save('static/file1/' + data1_name)
 
-        dataset = load_dataset("csv", data_files=os.path.join('static/file1/' + file.filename))
+        dataset = load_dataset("csv", data_files=os.path.join('static/file1/', data1_name))
         
         ds_train_devtest = dataset['train'].train_test_split(test_size=0.2, seed=42)
         ds_devtest = ds_train_devtest['test'].train_test_split(test_size=0.5, seed=42)
-
 
         ds_splits = DatasetDict({
             'train': ds_train_devtest['train'],
@@ -111,7 +110,7 @@ def make_prediction():
         )
 
         evaluation = classifier.evaluate(test_dataset)
-        render_template('index2.html', result=evaluation)
+        return render_template('index2.html', result=evaluation)
     except:
         render_template('index2.html', result="Prediction Failed. Please check your input and retry.")
 
