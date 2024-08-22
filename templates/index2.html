@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<title>Page Title</title>
+<style>
+	.button {
+	  display: inline-block;
+	  border-radius: 4px;
+	  background-color: #f4511e;
+	  border: none;
+	  color: #FFFFFF;
+	  text-align: center;
+	  font-size: 28px;
+	  padding: 20px;
+	  width: 200px;
+	  transition: all 0.5s;
+	  cursor: pointer;
+	  margin: 5px;
+	}
+	.button span {
+	  cursor: pointer;
+	  display: inline-block;
+	  position: relative;
+	  transition: 0.5s;
+	}
+	.button span:after {
+	  content: '\00bb';
+	  position: absolute;
+	  opacity: 0;
+	  top: 0;
+	  right: -20px;
+	  transition: 0.5s;
+	}
+	.button:hover span {
+	  padding-right: 25px;
+	}
+	.button:hover span:after {
+	  opacity: 1;
+	  right: 0;
+	}
+
+    	.formfield {
+  	  display: flex;
+  	  align-items: center;
+	}
+
+	.label {
+  	  color: white;
+  	  padding: 8px;
+	}
+
+	.success {background-color: #f07167;} /* Green */
+	.info {background-color: #2196F3;} /* Blue */
+	.red {background-color: #ef233c} /* Red */
+	.warning {background-color: #ff9800;} /* Orange */
+
+	.center {
+  	  margin: auto;
+	  width: 80%;
+	  border: 0px solid #73AD21;
+	  padding: 10px;
+	  background-color: #e2eafc;
+	}
+	.container {
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	}
+    
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  background-color: #f1f1f1;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+</head>
+<body>
+
+<div class = "center">
+<div class='text' align='center'><h2><font color='#00b4d8'>Movie</font><font color='#fb6f92'>Pullllllse</font>: Upload your own dataset and use a model trained on it! &nbsp;</h2></div>
+
+<!-- Tab content -->
+<div>
+  <h3>Text Classification</h3>
+  <p>Text classification is a machine learning subfield that teaches computers how to classify text into different categories. It’s commonly used as a supervised learning technique, which means that the algorithm is trained on a set of texts that have already been labeled with their respective categories. Once it’s been trained on this data, the algorithm can use what it’s learned to make predictions about new, unlabeled texts.
+	<br>
+	Thank you for submitting
+  </p>
+  <form action="/" method="post" enctype="multipart/form-data"></form>
+  	<label for="input_data1" class='label success'>Data:</label>
+  	<input type="file" name="input_data1" accept = ".csv">
+	<button type = "submit">Upload</button>  
+  </form>
+
+  <div>
+	{{ result }}
+  </div>
+</div>
+</div>
+
+</body>
+</html>
